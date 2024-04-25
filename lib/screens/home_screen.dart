@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

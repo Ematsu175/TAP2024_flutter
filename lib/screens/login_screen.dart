@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ) 
             ),
             Positioned(
-              top: 330,
+              top: 475,
               child: SizedBox(
                 height: 50,
                 width: 50,
