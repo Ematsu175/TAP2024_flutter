@@ -40,6 +40,14 @@ class HomeScreen extends StatelessWidget {
               trailing: Icon(Icons.chevron_right),
               onTap: () => Navigator.pushNamed(context, "/login2"),
             ),
+            ListTile(
+              title: Text('Intenciones'),
+              subtitle: Text('Acciones implicitas'),
+              tileColor: Colors.grey,
+              leading: Icon(Icons.abc),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () => Navigator.pushNamed(context, "/intent"),
+            ),
             DayNightSwitcher(
               isDarkModeEnabled: ValueListener.isDark.value, 
               onStateChanged: (isDarkModeEnabled){

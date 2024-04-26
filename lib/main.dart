@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tap_2024/screens/home_screen.dart';
+import 'package:tap_2024/screens/intenciones_screen.dart';
 import 'package:tap_2024/screens/login_screen_2.dart';
 import 'package:tap_2024/screens/splash_screen.dart';
 import 'package:tap_2024/settings/theme_settings.dart';
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: SplashScreen(),
           theme: value 
-          ? ThemeSettings.lightTheme(context) 
-          : ThemeSettings.darkTheme(context),
+          ? ThemeSettings.darkTheme(context) 
+          : ThemeSettings.lightTheme(context),
           routes: {
             "/home" :(context) => HomeScreen(),
             "/login2" : (context) => LoginScreen2(),
+            "/intent" : (context) => IntencionesScreen(),
           },
         );
       }
