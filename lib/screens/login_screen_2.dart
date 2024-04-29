@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tap_2024/screens/home_screen.dart';
 
@@ -9,7 +8,6 @@ class LoginScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isValidating = false;
     return Scaffold(
       body: Stack(
         children: [
