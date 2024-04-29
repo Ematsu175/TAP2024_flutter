@@ -4,8 +4,6 @@ import 'package:tap_2024/screens/home_screen.dart';
 class LoginScreen2 extends StatelessWidget {
   const LoginScreen2({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,28 +20,28 @@ class LoginScreen2 extends StatelessWidget {
                   Color.fromARGB(255, 23, 26, 184),
                   Color.fromARGB(255, 255, 255, 255),
                 ])),
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                Positioned(
-                  top: 30,
-                  child: Image.asset('assets/user_ls2.png'),
-                  height: 100,
-                  width: 100,
-                ),
-              ],
-            ),
-          ),
-          Container(
-            child: const Padding(
-              padding: EdgeInsets.only(top: 150.0, left: 125),
-              child: Text(
-                'Sign in!',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+            child: Center(
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Positioned(
+                    top: 30,
+                    child: Column(
+                      children: [
+                        Image.asset('assets/user_ls2.png'),
+                        Text('Sign in!',
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    height: 200,
+                    width: 200,
+                  ),
+                ],
               ),
             ),
           ),
@@ -91,9 +89,6 @@ class LoginScreen2 extends StatelessWidget {
                                 ),
                               )),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
                         Align(
                             alignment: Alignment.centerRight,
                             child: Text(
@@ -107,40 +102,45 @@ class LoginScreen2 extends StatelessWidget {
                           height: 30,
                         ),
                         Container(
-                          child: TextButton(
-                            onPressed: () => showDialog<String>(
+                            child: TextButton(
+                          onPressed: () => showDialog<String>(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
-                                title: const Text('Alerta'),
-                                content: const Text('Iras a la pagina principal'),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () => Navigator.pop(context, 'Cancel'), 
-                                    child: const Text('Cancel'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () => Navigator.push(context, 
-                                                      MaterialPageRoute(builder: (context) => const HomeScreen())
-                                                    ), 
-                                    child: const Text('OK')
-                                  )
-                                ],
-                              ) 
-                            ), 
-                            child: Column(
-                              children: [
-                                Image.asset('assets/Button_LS2.png', width: 100, height: 100,),
-                                const Text("SING IN",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Color.fromARGB(255, 89, 53, 94)),
-                                ),
-                              ],
-                            ),
-                          )
-
-                        ),
+                                    title: const Text('Alerta'),
+                                    content: const Text(
+                                        'Iras a la pagina principal'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(context, 'Cancel'),
+                                        child: const Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                          onPressed: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const HomeScreen())),
+                                          child: const Text('OK'))
+                                    ],
+                                  )),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                'assets/Button_LS2.png',
+                                width: 100,
+                                height: 100,
+                              ),
+                              const Text(
+                                "SING IN",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: Color.fromARGB(255, 89, 53, 94)),
+                              ),
+                            ],
+                          ),
+                        )),
                         SizedBox(
                           height: 30,
                         ),
