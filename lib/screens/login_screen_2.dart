@@ -1,10 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tap_2024/screens/home_screen.dart';
 
 class LoginScreen2 extends StatelessWidget {
   const LoginScreen2({super.key});
 
+  
+
   @override
   Widget build(BuildContext context) {
+    bool isValidating = false;
     return Scaffold(
       body: Stack(
         children: [
@@ -104,27 +109,39 @@ class LoginScreen2 extends StatelessWidget {
                           height: 30,
                         ),
                         Container(
-                          height: 55,
-                          width: 300,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment(1.5, 1),
-                                colors: [
-                                  Color.fromARGB(255, 23, 26, 184),
-                                  Color.fromARGB(255, 255, 255, 255),
+                          child: TextButton(
+                            onPressed: () => showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('Alerta'),
+                                content: const Text('Iras a la pagina principal'),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () => Navigator.pop(context, 'Cancel'), 
+                                    child: const Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () => Navigator.push(context, 
+                                                      MaterialPageRoute(builder: (context) => const HomeScreen())
+                                                    ), 
+                                    child: const Text('OK')
+                                  )
                                 ],
-                              )),
-                          child: Center(
-                            child: Text(
-                              'SING IN',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Colors.white),
+                              ) 
+                            ), 
+                            child: Column(
+                              children: [
+                                Image.asset('assets/Button_LS2.png', width: 100, height: 100,),
+                                const Text("SING IN",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                      color: Color.fromARGB(255, 89, 53, 94)),
+                                ),
+                              ],
                             ),
-                          ),
+                          )
+
                         ),
                         SizedBox(
                           height: 30,
@@ -156,7 +173,6 @@ class LoginScreen2 extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );
