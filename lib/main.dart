@@ -3,6 +3,7 @@ import 'package:tap_2024/screens/home_screen.dart';
 import 'package:tap_2024/screens/intenciones_screen.dart';
 import 'package:tap_2024/screens/login_screen_2.dart';
 import 'package:tap_2024/screens/popular_screen.dart';
+import 'package:tap_2024/screens/registrer_screen.dart';
 import 'package:tap_2024/screens/splash_screen.dart';
 import 'package:tap_2024/settings/theme_settings.dart';
 import 'package:tap_2024/settings/value_listener.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, value, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: PopularScreen(),
+          home: RegistrerScreen(),
           theme: value 
           ? ThemeSettings.darkTheme(context) 
           : ThemeSettings.lightTheme(context),
@@ -27,6 +28,8 @@ class MyApp extends StatelessWidget {
             "/home" :(context) => HomeScreen(),
             "/login2" : (context) => LoginScreen2(),
             "/intent" : (context) => IntencionesScreen(),
+            "/popular" : (context) => PopularScreen(),
+            "/registrer" : (context) => RegistrerScreen(),
           },
         );
       }
